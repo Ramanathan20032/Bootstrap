@@ -79,10 +79,12 @@
     <!-- [Component] List Group  - for displaying lists -->
     <!-- [component] badge       - Indicating the Message -->
     <!-- [component] dropdown    - Used for providng list of actions-->
+    <!-- [component] Nav & Tabs  - Organizing content into different section -->
     <main>
       <div class="container">
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal" type="button">Add Task</button>
 
+        <!-- card -->
         <div class="card mt-3">
           <div class="card-header">Task-List</div>
 
@@ -141,6 +143,7 @@
 
         </div>
 
+        <!-- dropdown -->
         <div class="dropdown mt-3">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Actions</button>
           <ul class="dropdown-menu">
@@ -150,6 +153,55 @@
             <li><a class="dropdown-item" href="#">Mark as Completed</a></li>
           </ul>
         </div>
+
+        <!-- Nav & Tabs -->
+        <ul class="nav nav-tabs mt-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" type="button" data-bs-toggle="tab" data-bs-target="#allTasks">All Tasks</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-target="#completedTasks">Completed Tasks</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Link 1</a></li>
+              <li><a href="#" class="dropdown-item">Link 2</a></li>
+              <li><a href="#" class="dropdown-item">Link 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" type="button" data-bs-toggle="tab" data-bs-target="#pendingTasks">Pending Tasks</a>
+          </li>
+        </ul>
+        
+        <!-- Tab-Pane -->
+        <div class="tab-content mt-3">
+          <div class="tab-pane active show fade" id="allTasks">
+            <p>All Task Will Be {allTasks} Displayed Here</p>
+          </div>
+          <div class="tab-pane fade" id="completedTasks">
+            <p>All Task Will Be {completedTasks} Displayed Here</p>
+          </div>
+          <div class="tab-pane fade" id="pendingTasks">
+            <p>All Task Will Be {pendingTasks} Displayed Here</p>
+          </div>
+        </div>
+
+        <!-- Pagination - Essential for navigating through set of data -->
+          <ul class="pagination justify-content-center mt-4">
+            <li class="page-item"><a href="#" class="page-link">Prevoius</a></li>
+            <li class="page-item"><a href="#" class="page-link active">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link disabled">Next</a></li>
+          </ul>
+
+          <!-- Tooltips: Provides additional information on hover -->
+          <!-- Popovers: similar to tooltip but has a additional info via pop-up -->
+          <div class="d-flex justify-content-center mb-5">
+            <button class="btn btn-info mt-3" data-bs-toggle="tooltip" data-bs-title="Navgating to Document Page" data-bs-placement="top">Go to Documents</button>
+            <button class="btn btn-secondary mt-3 ms-2" data-bs-toggle="tooltip" data-bs-title="Navgating to Home page" data-bs-placement="right">Home</button>
+            <button class="btn btn-danger mt-3 ms-2" data-bs-toggle="popover" data-bs-placement="top" data-bs-title="Task Update" data-bs-content="This menu will change all current changes in the task at one time. This take some time for processing.">Save Changes</button>
+          </div>
+        
       </div>
     </main>
 
@@ -158,5 +210,15 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.12"></script>
+
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
   </body>
 </html>
