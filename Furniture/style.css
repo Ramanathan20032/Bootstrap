@@ -82,7 +82,100 @@
     background: transparent;
     border: 1px solid black;
     letter-spacing: 3px;
+    font-weight: bold;
+}
+#btn1 button:hover{
+    background: green;
+}
+@media screen and (max-width: 480px){
+    .content h1{
+        font-size: 30px;
+    }
 }
 /* contentt */
 
 /* main content */
+
+/* card-1 */
+#btn2 button{
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #000;
+    transition: 0.5s ease;
+}
+/* card-1 */
+
+/* card-2 */
+#tpc{
+    box-shadow: 0 0 5px #000;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#tpc:hover{
+    transform: translatey(-10px);
+}
+/* card-2 */
+
+/* card-3 */
+#c p{
+    font-weight: bold;
+}
+#btn3{
+    text-align: center;
+}
+#btn3 button{
+    width: 150px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#btn3 button:hover{
+    background: rgb(238, 224, 208);
+}
+/* card-3 */
+
+/* About */
+#btn4 button{
+    width: 150px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#btn4 button:hover{
+    background: rgb(238, 224, 208);
+}
+/* About */
+
+/* footer */
+#footer{
+    width: 100%;
+    background-color: #000;
+    margin-top: 100px;
+}
+#footer h1{
+    color: #fff;
+    padding-top: 30px;
+}
+#footer p{
+    color: #fff;
+}
+.icons i{
+    color: rgb(238, 224, 208);
+    font-size: 25px;
+    cursor: pointer;
+}
+.copyright{
+    color: #fff;
+    margin-top: 20px;
+}
+.credit{
+    color: #fff;
+}
+.credit a{
+    text-decoration: none;
+    margin-left: 5px;
+}
+/* footer */
